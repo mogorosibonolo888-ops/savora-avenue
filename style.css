@@ -1,0 +1,1702 @@
+
+/* =========================================
+   SAVORA AVENUE - LUXURY WEBSITE
+========================================= */
+
+:root {
+    --black: #11100E;
+    --dark: #191613;
+    --card: #211D19;
+    --gold: #C7A47C;
+    --gold-light: #E2C49B;
+    --ivory: #F5F0E8;
+    --muted: #B0A69A;
+    --border: rgba(199, 164, 124, 0.22);
+
+    --heading-font: "Cormorant Garamond", serif;
+    --body-font: "DM Sans", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--black);
+    color: var(--ivory);
+    font-family: var(--body-font);
+    font-weight: 300;
+    overflow-x: hidden;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+section {
+    scroll-margin-top: 90px;
+}
+
+
+
+/* =========================================
+   HEADER - VIDEO BACKGROUND
+========================================= */
+
+.site-header {
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    min-height: 190px;
+    padding: 25px 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+
+    overflow: hidden;
+    background: #11100E;
+    border-bottom: 1px solid rgba(199, 164, 124, 0.25);
+}
+
+/* VIDEO BACKGROUND */
+
+.header-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -2;
+}
+
+/* DARK OVERLAY */
+
+.header-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(17, 16, 14, 0.58);
+    z-index: -1;
+}
+
+/* BRAND LOGO AND TEXT */
+
+.brand-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-shrink: 0;
+}
+
+.site-header .brand-logo {
+    width: 225px;
+    height: 225px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    white-space: nowrap;
+}
+
+.brand-name {
+    font-family: var(--heading-font);
+    font-size: 19px;
+    color: var(--ivory);
+    letter-spacing: 2px;
+}
+
+.brand-tagline {
+    font-family: var(--body-font);
+    font-size: 8px;
+    color: var(--gold-light);
+    letter-spacing: 2px;
+}
+
+/* NAVIGATION */
+
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+}
+
+.main-nav a {
+    font-size: 12px;
+    color: var(--ivory);
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.main-nav a:hover {
+    color: var(--gold-light);
+}
+
+/* BOOKING BUTTON */
+
+.header-book {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+
+    border: 1px solid var(--gold);
+    padding: 12px 18px;
+
+    color: var(--gold-light);
+    font-size: 11px;
+    letter-spacing: 1px;
+    white-space: nowrap;
+    flex-shrink: 0;
+
+    transition: 0.3s;
+}
+
+.header-book:hover {
+    background: var(--gold);
+    color: var(--black);
+}
+
+.header-book i {
+    width: 16px;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+
+    background-image:
+        linear-gradient(
+            rgba(12, 10, 8, 0.42),
+            rgba(12, 10, 8, 0.66)
+        ),
+        url("images/hero.png");
+
+    background-size: cover;
+    background-position: center;
+
+    animation: heroZoom 22s ease-in-out infinite alternate;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 15%,
+            rgba(0, 0, 0, 0.28) 100%
+        );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    max-width: 1000px;
+    padding: 140px 25px 100px;
+
+    text-align: center;
+}
+
+.hero-eyebrow,
+.section-eyebrow {
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 4px;
+}
+
+.hero-eyebrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 18px;
+
+    margin-bottom: 30px;
+
+    animation: fadeUp 1s ease both;
+}
+
+.gold-line {
+    width: 35px;
+    height: 1px;
+    background: var(--gold);
+}
+
+.hero h1 {
+    font-family: var(--heading-font);
+    font-size: clamp(48px, 8vw, 105px);
+    font-weight: 400;
+    line-height: 0.95;
+    letter-spacing: 1px;
+
+    animation: fadeUp 1.1s ease both;
+}
+
+.hero h1 span {
+    display: block;
+
+    color: var(--gold);
+    font-style: italic;
+
+    margin-top: 12px;
+}
+
+.hero-description {
+    max-width: 620px;
+
+    margin: 30px auto;
+
+    color: #E0D8CE;
+    font-size: 15px;
+    line-height: 1.9;
+
+    animation: fadeUp 1.3s ease both;
+}
+
+.hero-actions {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+
+    margin-top: 35px;
+
+    animation: fadeUp 1.5s ease both;
+}
+
+.gold-button,
+.outline-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+
+    padding: 16px 24px;
+
+    font-size: 11px;
+    letter-spacing: 1.5px;
+
+    transition: 0.35s ease;
+}
+
+.gold-button {
+    background: var(--gold);
+    color: var(--black);
+    border: 1px solid var(--gold);
+}
+
+.gold-button:hover {
+    background: var(--gold-light);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 30px rgba(199, 164, 124, 0.2);
+}
+
+.outline-button {
+    border: 1px solid rgba(245, 240, 232, 0.55);
+    color: var(--ivory);
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.outline-button:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    transform: translateY(-3px);
+}
+
+.gold-button i,
+.outline-button i {
+    width: 16px;
+    height: 16px;
+}
+
+.hero-bottom {
+    position: absolute;
+    bottom: 30px;
+    left: 7%;
+    right: 7%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    color: #D3C3AD;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+}
+
+.hero-location,
+.hero-scroll {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.hero-bottom i {
+    width: 14px;
+    color: var(--gold);
+}
+
+.hero-scroll {
+    animation: float 2s ease-in-out infinite;
+}
+
+@keyframes heroZoom {
+    from {
+        background-size: 100% auto;
+    }
+
+    to {
+        background-size: 110% auto;
+    }
+}
+
+
+/* =========================================
+   EXPERIENCE STRIP
+========================================= */
+
+.experience-strip {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 40px;
+
+    padding: 30px 20px;
+
+    background: var(--dark);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.experience-strip div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.experience-strip i {
+    color: var(--gold);
+    width: 18px;
+}
+
+.experience-strip span {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+    color: #C9BDAF;
+}
+
+
+/* =========================================
+   SECTION GENERAL
+========================================= */
+
+.section-padding {
+    padding: 110px 8%;
+}
+
+.section-eyebrow {
+    margin-bottom: 22px;
+}
+
+.story-content h2,
+.menu-heading h2,
+.reservation-info h2,
+.contact-section h2 {
+    font-family: var(--heading-font);
+    font-size: clamp(42px, 5vw, 70px);
+    font-weight: 400;
+    line-height: 1.05;
+}
+
+.story-content h2 span,
+.reservation-info h2 span,
+.contact-section h2 span {
+    display: block;
+    color: var(--gold);
+    font-style: italic;
+}
+
+
+/* =========================================
+   STORY
+========================================= */
+
+.story {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 90px;
+
+    background: var(--black);
+}
+
+.story-image {
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+}
+
+.story-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s ease;
+}
+
+.story-image:hover img {
+    transform: scale(1.06);
+}
+
+.story-image-tag {
+    position: absolute;
+    bottom: 25px;
+    left: 25px;
+
+    border: 1px solid var(--gold);
+    background: rgba(17, 16, 14, 0.8);
+
+    padding: 12px 18px;
+}
+
+.story-image-tag span {
+    font-size: 10px;
+    color: var(--gold);
+    letter-spacing: 2px;
+}
+
+.story-content > p:not(.section-eyebrow) {
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 2;
+    margin-top: 25px;
+}
+
+.story-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+
+    margin-top: 30px;
+    padding-bottom: 10px;
+
+    border-bottom: 1px solid var(--gold);
+    color: var(--gold);
+
+    font-size: 11px;
+    letter-spacing: 1.5px;
+}
+
+.story-link i {
+    width: 16px;
+}
+
+
+/* =========================================
+   MENU
+========================================= */
+
+.menu-section {
+    background:
+        radial-gradient(
+            circle at 50% 0,
+            rgba(199, 164, 124, 0.06),
+            transparent 45%
+        ),
+        var(--dark);
+}
+
+.menu-heading {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 45px;
+}
+
+.menu-heading h2 span {
+    color: var(--gold);
+    font-style: italic;
+}
+
+.menu-heading h2 {
+    font-family: var(--heading-font);
+    font-size: clamp(44px, 5vw, 72px);
+    font-weight: 400;
+}
+
+.menu-heading > p:last-child {
+    margin-top: 20px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+
+/* MENU FILTERS */
+
+.menu-filters {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+
+    margin-bottom: 45px;
+}
+
+.filter-button {
+    padding: 12px 22px;
+
+    border: 1px solid var(--border);
+    background: transparent;
+
+    color: var(--muted);
+    font-size: 11px;
+    letter-spacing: 1px;
+
+    transition: 0.3s ease;
+}
+
+.filter-button:hover,
+.filter-button.active {
+    background: var(--gold);
+    color: var(--black);
+    border-color: var(--gold);
+}
+
+
+/* MENU CARDS */
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.menu-card {
+    background: #1A1714;
+    border: 1px solid rgba(199, 164, 124, 0.12);
+
+    overflow: hidden;
+
+    transition: transform 0.4s, border-color 0.4s;
+}
+
+.menu-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(199, 164, 124, 0.5);
+}
+
+.menu-card-image {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+
+    transition: transform 0.7s ease;
+}
+
+.menu-card:hover .menu-card-image {
+    transform: scale(1.05);
+}
+
+.menu-card-content {
+    padding: 25px;
+}
+
+.menu-category {
+    display: inline-block;
+
+    margin-bottom: 12px;
+
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.menu-card-content h3 {
+    font-family: var(--heading-font);
+    font-size: 28px;
+    font-weight: 400;
+}
+
+.menu-card-content > p {
+    min-height: 55px;
+
+    margin-top: 12px;
+
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.menu-card-bottom {
+    margin-top: 22px;
+    padding-top: 15px;
+
+    border-top: 1px solid var(--border);
+}
+
+.price {
+    color: var(--gold);
+    font-family: var(--heading-font);
+    font-size: 26px;
+}
+
+.menu-disclaimer {
+    margin-top: 40px;
+    text-align: center;
+
+    color: var(--muted);
+    font-size: 12px;
+}
+
+
+/* =========================================
+   RESERVATIONS
+========================================= */
+
+.reservation-section {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 80px;
+    align-items: start;
+
+    background:
+        radial-gradient(
+            circle at 0 100%,
+            rgba(199, 164, 124, 0.08),
+            transparent 40%
+        ),
+        var(--black);
+}
+
+.reservation-info {
+    padding-top: 30px;
+}
+
+.reservation-info > p:not(.section-eyebrow) {
+    margin-top: 25px;
+    color: var(--muted);
+    font-size: 14px;
+    line-height: 2;
+}
+
+.reservation-perks {
+    display: grid;
+    gap: 28px;
+    margin-top: 45px;
+}
+
+.reservation-perk {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+}
+
+.reservation-perk > i {
+    color: var(--gold);
+    width: 24px;
+    height: 24px;
+    margin-top: 3px;
+}
+
+.reservation-perk h3 {
+    font-family: var(--heading-font);
+    font-size: 23px;
+    font-weight: 400;
+}
+
+.reservation-perk p {
+    margin-top: 5px;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.8;
+}
+
+
+/* RESERVATION CARD */
+
+.reservation-card {
+    background: #1C1915;
+    border: 1px solid var(--border);
+
+    padding: 40px;
+
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.25);
+}
+
+.reservation-card-heading {
+    margin-bottom: 30px;
+}
+
+.reservation-card-heading h3 {
+    font-family: var(--heading-font);
+    font-size: 38px;
+    font-weight: 400;
+}
+
+.reservation-card-heading > p:last-child {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 13px;
+}
+
+
+/* FORM */
+
+.reservation-form,
+#reservation-form {
+    display: grid;
+    gap: 22px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.form-group label {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    color: #D6C9B8;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+}
+
+.form-group label i {
+    width: 15px;
+    height: 15px;
+    color: var(--gold);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+
+    padding: 14px 15px;
+
+    background: #12110F;
+    border: 1px solid rgba(199, 164, 124, 0.2);
+
+    color: var(--ivory);
+    outline: none;
+
+    font-size: 13px;
+
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 2px rgba(199, 164, 124, 0.08);
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #756B60;
+}
+
+.form-group select option {
+    background: #12110F;
+    color: var(--ivory);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.reservation-disclaimer {
+    color: #968B7F;
+    font-size: 11px;
+    line-height: 1.8;
+}
+
+.reservation-submit {
+    width: 100%;
+    border: none;
+    min-height: 55px;
+}
+
+
+/* CONFIRMATION */
+
+.reservation-confirmation {
+    margin-top: 25px;
+    padding: 25px;
+
+    background: rgba(199, 164, 124, 0.06);
+    border: 1px solid var(--gold);
+}
+
+.reservation-confirmation h3 {
+    color: var(--gold);
+    font-family: var(--heading-font);
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.reservation-confirmation p {
+    margin: 10px 0;
+    color: #D6C9B8;
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.reservation-reference {
+    color: var(--gold) !important;
+    font-weight: 600;
+}
+
+
+/* =========================================
+   CONTACT
+========================================= */
+
+.contact-section {
+    text-align: center;
+    background:
+        linear-gradient(rgba(17, 16, 14, 0.9), rgba(17, 16, 14, 0.96)),
+        url("images/our-story.jpg");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.contact-section > i {
+    width: 38px;
+    height: 38px;
+    color: var(--gold);
+    margin: 0 auto 25px;
+}
+
+.contact-section h2 {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.contact-section > p:not(.section-eyebrow) {
+    margin: 20px auto 30px;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+.site-footer {
+    padding: 65px 20px 30px;
+
+    text-align: center;
+
+    background: #0D0C0B;
+    border-top: 1px solid var(--border);
+}
+
+.site-footer .logo {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+.site-footer > p {
+    margin-top: 15px;
+    color: var(--muted);
+    font-size: 12px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+
+    margin: 30px 0;
+}
+
+.footer-links a {
+    color: #C9BDAF;
+    font-size: 11px;
+    transition: 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--gold);
+}
+
+.site-footer .footer-note {
+    font-size: 10px;
+    color: #746B61;
+}
+
+
+/* =========================================
+   RESERVATION LOADING ANIMATION
+========================================= */
+
+.reservation-animation {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+
+    background: rgba(12, 11, 10, 0.96);
+    backdrop-filter: blur(15px);
+}
+
+.reservation-animation p {
+    color: var(--ivory);
+    font-family: var(--heading-font);
+    font-size: 30px;
+}
+
+.reservation-animation > span {
+    color: var(--gold);
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.reservation-loader {
+    width: 55px;
+    height: 55px;
+
+    border: 1px solid rgba(199, 164, 124, 0.2);
+    border-top: 2px solid var(--gold);
+    border-radius: 50%;
+
+    animation: spin 1s linear infinite;
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-7px);
+    }
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================================
+   RESPONSIVE DESIGN
+========================================= */
+
+@media (max-width: 1000px) {
+
+    .site-header {
+        padding: 18px 5%;
+    }
+
+    .main-nav {
+        gap: 20px;
+    }
+
+    .story {
+        gap: 45px;
+    }
+
+    .reservation-section {
+        gap: 40px;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+@media (max-width: 700px) {
+
+   
+    /* MOBILE VIDEO HEADER */
+
+    .site-header {
+        min-height: 260px;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-content: center;
+        padding: 20px 5%;
+        gap: 18px;
+    }
+
+    .brand-container {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .site-header .brand-logo {
+        width: 35px;
+        height: 35px;
+    }
+
+    .brand-name {
+        font-size: 16px;
+    }
+
+    .brand-tagline {
+        font-size: 7px;
+    }
+
+    .main-nav {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .main-nav a {
+        font-size: 10px;
+    }
+
+    .header-book {
+        padding: 10px 15px;
+        font-size: 9px;
+    }
+
+
+    .hero {
+        min-height: 100vh;
+        background-position: center;
+        animation: none;
+    }
+
+    .hero-content {
+        padding-top: 170px;
+    }
+
+    .hero h1 {
+        font-size: clamp(42px, 12vw, 68px);
+    }
+
+    .hero-eyebrow {
+        font-size: 9px;
+        letter-spacing: 2px;
+        gap: 10px;
+    }
+
+    .hero-description {
+        font-size: 13px;
+    }
+
+    .hero-bottom {
+        left: 5%;
+        right: 5%;
+        bottom: 20px;
+    }
+
+    .hero-location {
+        display: none;
+    }
+
+    .experience-strip {
+        gap: 20px;
+    }
+
+    .experience-strip span {
+        font-size: 9px;
+    }
+
+    .section-padding {
+        padding: 75px 6%;
+    }
+
+    .story {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .story-image {
+        height: 400px;
+    }
+
+    .story-content h2,
+    .menu-heading h2,
+    .reservation-info h2,
+    .contact-section h2 {
+        font-size: 48px;
+    }
+
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .menu-card-image {
+        height: 260px;
+    }
+
+    .reservation-section {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .reservation-info {
+        padding-top: 0;
+    }
+
+    .reservation-card {
+        padding: 25px 18px;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .reservation-card-heading h3 {
+        font-size: 32px;
+    }
+
+    .footer-links {
+        gap: 15px;
+    }
+}
+   
+/* =========================================
+   ACCESSIBILITY - REDUCED MOTION
+========================================= */
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+    .reveal,
+    .reveal-image {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+
+/* =========================================
+   SCROLL REVEAL ANIMATIONS
+========================================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(45px);
+    transition: opacity 0.9s ease, transform 0.9s ease;
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-image {
+    opacity: 0;
+    transform: scale(1.05);
+    transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.reveal-image.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+/* ==========================================
+   SAVORA AVENUE - FULL CINEMATIC VIDEO INTRO
+========================================== */
+
+.intro-video {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    min-height: 100svh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: #11100E;
+    isolation: isolate;
+}
+
+/* VIDEO - FORCE IT TO BECOME A BACKGROUND */
+.intro-video-bg {
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center;
+    z-index: -2 !important;
+    display: block;
+    border: none;
+}
+
+/* DARK LAYER OVER THE VIDEO */
+.intro-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(12, 11, 10, 0.70),
+        rgba(12, 11, 10, 0.35) 45%,
+        rgba(12, 11, 10, 0.70)
+    );
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* HEADER ON TOP OF VIDEO */
+.intro-video .site-header {
+    position: relative;
+    z-index: 5;
+    width: 100%;
+    background: transparent !important;
+    border-bottom: 1px solid rgba(199, 164, 124, 0.25);
+}
+
+/* BRAND */
+.intro-video .brand-container {
+    position: relative;
+    z-index: 6;
+}
+
+/* NAVIGATION */
+.intro-video .main-nav,
+.intro-video .header-book {
+    position: relative;
+    z-index: 6;
+}
+
+/* CENTER HERO CONTENT */
+.intro-content {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 80px 25px;
+    text-align: center;
+}
+
+/* SMALL GOLD TEXT */
+.intro-eyebrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    color: var(--gold-light);
+    font-size: 11px;
+    letter-spacing: 4px;
+    margin-bottom: 30px;
+}
+
+/* GOLD LINES */
+.intro-eyebrow .gold-line {
+    display: block;
+    width: 35px;
+    height: 1px;
+    background: var(--gold);
+}
+
+/* MAIN TITLE */
+.intro-content h1 {
+    font-family: var(--heading-font);
+    color: var(--ivory);
+    font-size: clamp(45px, 7vw, 100px);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: 1px;
+    margin-bottom: 25px;
+}
+
+/* SECOND TITLE LINE */
+.intro-content h1 span {
+    display: block;
+    color: var(--gold-light);
+    font-style: italic;
+}
+
+/* DESCRIPTION */
+.intro-description {
+    max-width: 600px;
+    margin: 0 auto 35px;
+    color: rgba(245, 240, 232, 0.85);
+    font-size: 15px;
+    line-height: 1.9;
+}
+
+/* BUTTONS */
+.intro-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+    flex-wrap: wrap;
+}
+
+/* BOTTOM INFORMATION */
+.intro-bottom {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    padding: 25px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--ivory);
+    font-size: 10px;
+    letter-spacing: 2px;
+}
+
+/* LOCATION */
+.intro-location {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.intro-location i {
+    color: var(--gold-light);
+}
+
+/* SCROLL TEXT */
+.intro-scroll {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    color: var(--gold-light);
+}
+
+/* ESTABLISHED */
+.intro-est {
+    color: var(--ivory);
+}
+
+/* SCROLL ARROW */
+.intro-scroll i {
+    animation: introBounce 1.5s infinite;
+}
+
+@keyframes introBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(6px);
+    }
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+
+    .intro-video {
+        min-height: 100svh;
+    }
+
+    .intro-video .site-header {
+        min-height: 200px;
+    }
+
+    .intro-content {
+        padding: 60px 20px;
+    }
+
+    .intro-content h1 {
+        font-size: clamp(40px, 11vw, 65px);
+    }
+
+    .intro-eyebrow {
+        font-size: 8px;
+        letter-spacing: 2px;
+        gap: 8px;
+    }
+
+    .intro-eyebrow .gold-line {
+        width: 20px;
+    }
+
+    .intro-description {
+        font-size: 13px;
+    }
+
+    .intro-bottom {
+        padding: 20px;
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .intro-scroll {
+        display: none;
+    }
+
+  /* ==========================================
+   OUR PHILOSOPHY - CINEMATIC BACKGROUND
+========================================== */
+
+.story {
+    position: relative;
+
+    background:
+        linear-gradient(
+            rgba(17, 16, 14, 0.65),
+            rgba(17, 16, 14, 0.75)
+        ),
+        url("./images/dinining.jpg") center center / cover no-repeat;
+
+    padding: 110px 8%;
+    overflow: hidden;
+}
+
+/* Keep story content above the background */
+.story-image,
+.story-content {
+    position: relative;
+    z-index: 1;
+}
+
+/* Text styling */
+.story-content {
+    color: var(--ivory);
+}
+
+.story-content h2 {
+    color: var(--ivory);
+}
+
+.story-content h2 span {
+    color: var(--gold-light);
+}
+
+.story-content > p:not(.section-eyebrow) {
+    color: rgba(245, 240, 232, 0.9);
+}
+
+.story-content .section-eyebrow,
+.story-link {
+    color: var(--gold-light);
+}
+
+/* MOBILE */
+@media (max-width: 700px) {
+    .story {
+        padding: 75px 6%;
+        background-position: center;
+    }
+}
+}
+.story {
+    background-image:
+        linear-gradient(
+            rgba(17, 16, 14, 0.45),
+            rgba(17, 16, 14, 0.55)
+        ),
+        url("images/dining.jpg") !important;
+
+    background-size: cover !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* ==========================================
+   MENU HEADING - SAVORA BRAND LOGO
+========================================== */
+
+.menu-heading-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    max-width: 750px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.menu-section-logo {
+    width: 190px;
+    height: 127px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.menu-heading-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.menu-heading-text .section-eyebrow {
+    margin-bottom: 15px;
+}
+
+.menu-heading-text h2 {
+    margin-bottom: 12px;
+}
+
+.menu-heading-text > p:last-child {
+    margin-top: 0;
+    color: var(--muted);
+    line-height: 1.8;
+}
+
+/* MOBILE */
+@media (max-width: 600px) {
+    .menu-heading-brand {
+        gap: 14px;
+    }
+
+      .menu-section-logo {
+        width: 115px;
+        height: 77px;
+      }
+
+    .menu-heading-text h2 {
+        font-size: 38px;
+    }
+
+    .menu-heading-text .section-eyebrow {
+        font-size: 8px;
+        letter-spacing: 2px;
+    }
+
+    .menu-heading-text > p:last-child {
+        font-size: 12px;
+    }
+}
+
+/* ==========================================
+   CONTACT SECTION - SAVORA LOGO
+========================================== */
+
+.contact-heading-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    max-width: 850px;
+    margin: 0 auto 25px;
+    text-align: left;
+}
+
+.contact-section-logo {
+    width: 190px;
+    height: 127px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.contact-heading-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.contact-heading-text .section-eyebrow {
+    margin-bottom: 15px;
+}
+
+.contact-heading-text h2 {
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+
+    .contact-heading-brand {
+        gap: 14px;
+    }
+
+    .contact-section-logo {
+        width: 115px;
+        height: 77px;
+    }
+
+    .contact-heading-text h2 {
+        font-size: 32px;
+    }
+
+}
+
+
